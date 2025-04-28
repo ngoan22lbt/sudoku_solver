@@ -8,8 +8,7 @@ public class Board {
     /**
      * Constructor to create a Sudoku board.
      * Makes a deep copy of the provided board to avoid modifying the original.
-     *
-     * @param board a 9x9 integer array representing the Sudoku puzzle
+
      */
     public Board(int[][] board) {
         this.board = new int[9][9];
@@ -22,10 +21,6 @@ public class Board {
 
     /**
      * Get the number at a specific cell.
-     *
-     * @param row row index (0–8)
-     * @param col column index (0–8)
-     * @return the number at the given cell
      */
     public int getCell(int row, int col) {
         return board[row][col];
@@ -33,10 +28,6 @@ public class Board {
 
     /**
      * Set a number at a specific cell.
-     *
-     * @param row row index (0–8)
-     * @param col column index (0–8)
-     * @param value the number to set
      */
     public void setCell(int row, int col, int value) {
         board[row][col] = value;
