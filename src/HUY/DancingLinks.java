@@ -1,3 +1,5 @@
+package HUY;
+
 // Manages the Dancing Links matrix construction and operations for solving Sudoku using the Exact Cover problem
 class DancingLinks {
     // Constants defining the matrix dimensions

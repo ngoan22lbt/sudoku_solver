@@ -1,3 +1,4 @@
+package HUY;
 
 // Manages the Dancing Links search algorithm to solve a Sudoku puzzle
 // Uses the DancingLinks class to perform the Exact Cover problem solving via Algorithm X

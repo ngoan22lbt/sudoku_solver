@@ -1,3 +1,5 @@
+package HUY;
+
 public class test {
 
     public static int[][] initializeExactCoverMatrix() {

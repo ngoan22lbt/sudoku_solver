@@ -1,3 +1,5 @@
+package HUY;
+
 // Base node class for Dancing Links structure
 abstract class DLBaseNode {
     DLBaseNode up, down, left, right;
