@@ -17,6 +17,10 @@ public class SudokuTest {
         SudokuBoard board = new SudokuBoard(puzzle);
         BacktrackingSolver solver = new BacktrackingSolver(board);
 
+        System.out.println("Solving Sudoku using Backtracking with Bitmasking...");
+        System.out.println("Original Puzzle:");
+        board.printBoard();
+
         // Force garbage collection
         System.gc();
         Runtime runtime = Runtime.getRuntime();
@@ -46,6 +50,27 @@ public class SudokuTest {
         double durationInMs = (endTime - startTime) / 1_000_000.0;
         System.out.printf("Solving time: %.3f ms\n", durationInMs);
         System.out.printf("Memory used: %.2f KB\n", Math.abs(memoryUsed) / 1024.0);
+        System.out.println("Valid solution: " + isValidSudoku(board.getBoard()));
+    }
+    public static boolean isValidSudoku(int[][] board) {
+        for (int i = 0; i < 9; i++) {
+            boolean[] row = new boolean[10];
+            boolean[] col = new boolean[10];
+            boolean[] box = new boolean[10];
+            for (int j = 0; j < 9; j++) {
+                int r = board[i][j];
+                int c = board[j][i];
+                int b = board[3 * (i / 3) + j / 3][3 * (i % 3) + j % 3];
 
+                if (r < 1 || r > 9 || row[r]) return false;
+                if (c < 1 || c > 9 || col[c]) return false;
+                if (b < 1 || b > 9 || box[b]) return false;
+
+                row[r] = true;
+                col[c] = true;
+                box[b] = true;
+            }
+        }
+        return true;
     }
 }
