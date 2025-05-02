@@ -41,4 +41,6 @@ public class test {
         System.out.println("Matrix initialized with dimensions: " +
                 matrix.length + " x " + matrix[0].length);
     }
+
+
 }
