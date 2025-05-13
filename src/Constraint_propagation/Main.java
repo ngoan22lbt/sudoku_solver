@@ -53,8 +53,9 @@ public class Main {
 
         long durationMillis = (endTime - startTime) / 1_000_000;
         long memoryUsedKB = (endMemory - startMemory) / 1024;
+        boolean withinTwoMinutes = durationMillis <= 120_000;
 
-        System.out.printf("%s | Time: %d ms | Memory: %d KB | Solved: %s\n",
-                name, durationMillis, memoryUsedKB, solved ? "Yes" : "No");
+        System.out.printf("%s | Time: %d ms | Memory: %d KB | Solved: %s | Within 2 min: %s\n",
+                name, durationMillis, memoryUsedKB, solved ? "Yes" : "No", withinTwoMinutes ? "Yes" : "No");
     }
 }
